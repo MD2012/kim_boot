@@ -1,5 +1,20 @@
 module.exports = function(grunt) {
 
+    grunt.initConfig({
+        mocha:
+        {
+            test:
+            {
+                options:
+                {
+                    run: true,
+                    debug: false
+                },
+
+                src: [ 'test/test.js' ]
+            }
+        }
+    })
     grunt.registerTask('default', 'Default Task', function() {
         grunt.log.writeln('test')
     })
@@ -17,4 +32,21 @@ module.exports = function(grunt) {
     })
 
     grunt.registerTask('all', 'Run all tasks', ['default', 'greet:Marios', 'add:1:2'])
+
+    grunt.loadNpmTasks('grunt-mocha-test')
+
+    grunt.initConfig({
+        // Configure a mochaTest task
+        mochaTest: {
+            test: {
+                options: {
+                    reporter: 'spec'
+                },
+                src: ['test/**/*.js']
+            }
+        }
+    });
+
+    grunt.registerTask('test', 'mochaTest');
+
 }

@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/MD2012/kim_boot",
   "devDependencies": {
-    "grunt": "^0.4.5"
+    "grunt": "^0.4.5",
+    "grunt-mocha-test": "^0.11.0",
+    "mocha": "^1.21.4"
   }
 }
